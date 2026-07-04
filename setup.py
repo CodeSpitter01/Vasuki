@@ -11,6 +11,7 @@ setup(
         "urllib3>=1.26.0",
         "rich>=10.0.0",
         "duckduckgo-search>=3.0.0",
+        "ddgs>=9.14.0",
     ],
     entry_points={
         "console_scripts": [
