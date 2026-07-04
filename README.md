@@ -28,23 +28,29 @@
 
 ### Prerequisites
 - Python 3.6 or higher
-- `pip` and `virtualenv` (recommended)
+- `pip3` and `virtualenv` (recommended)
 
 ### Steps
 ```bash
 # Clone the repository
 git clone https://github.com/CodeSpitter01/Vasuki.git
-cd Vasuki
+cd Vasuki```
 
 # Create and activate a virtual environment
+```bash
 python3 -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
+```
 
 # Install in editable mode (creates the `vasuki` command)
+```bash
 pip install -e .
+```
 
 📝 Usage
+```bash
 vasuki -cat {st,em,any} -subcat {soc,case,pro,file,col,cus,all} -n "Full Name" -u "username" -k "keyword" --deep
+```
 
 Required arguments
 -n, --name – Target full name (compulsory).
@@ -55,16 +61,18 @@ Argument	Description
 -e, --email	Known email address.
 -k, --keywords	Extra keywords (can be used multiple times).
 -cat, --category	Category of target: st (student), em (employee), any (anyone).
--subcat, --subcategories	Space‑separated subcategories: soc, case, pro, file, col, cus, all.
+-subcat, --subcategories	Space‑separated subcategories: soc (social_sites), case(advocate_name, judge_name, case_number, party(A or B)_name), pro (professional_sites), file(docs,pdfs), col (college/university), cus (custom_search), all
 --deep	Enable deep recursive dorking (DuckDuckGo).
 --max-depth	Recursion depth for enrichment (default: 2).
 --workers	Number of threads (default: 25).
 -o, --output	Custom JSON report filename.
 
 Examples
+```bash
 vasuki -cat st -subcat soc col pro -n "Vivek Sharma" -u "vivek_21" --deep
 vasuki -cat em -subcat all -n "Priya Patel" -k "python" -k "hackerrank" --deep
 vasuki -cat any -subcat soc case -n "Amit Kumar" --deep
+```
 
 ⚠️ Input sensitivity – Vasuki relies on the exactness of the name/username you provide. If results are inaccurate, try tweaking the name (e.g., add initials, use a different spelling) or add relevant keywords. It doesn't guarantee 100% accuracy but aims to give you the best publicly available links quickly.
 
